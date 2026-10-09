@@ -2,11 +2,17 @@
 # ======================== 导入核心依赖 ========================
 from typing import Literal
 from langchain_core.tools import tool
+"""
+tool装饰器核心作用是将普通python函数转换为LangChain Agent可识别和调用的标准工具对象
+具体包括：a)自动封装;b)元数据提取;c)Agent集成
+"""
 from tavily import TavilyClient
 
 import os
 from dotenv import load_dotenv
-
+"""
+load_dotenv用于读取项目根目录下的 .env 文件，并将其中的键值对自动加载为系统环境变量
+"""
 from api.monitor import monitor
 from utils.retry import retry_with_backoff
 
